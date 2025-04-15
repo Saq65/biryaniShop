@@ -6,7 +6,7 @@ const AdminDashboard = () => {
     const audioRef = useRef(new Audio('/preview.mp3'));
 
     useEffect(() => {
-        const socket = io('http://localhost:5000'); 
+        const socket = io('https://biryanishop.onrender.com'); 
 
         socket.on('newOrder', (order) => {
             setOrders((prev) => [order, ...prev]);
