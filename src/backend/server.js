@@ -19,6 +19,11 @@ io.on('connection', (socket) => {
     console.log('Admin connected:', socket.id);
 });
 
+app.get("/", (req, res) => {
+    res.send("✅ Simple server is live!");
+  });
+  
+
 app.post('/api/orders', (req, res) => {
     const order = req.body;
 
