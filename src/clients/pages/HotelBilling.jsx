@@ -6,7 +6,7 @@ import axios from 'axios';
 import io from 'socket.io-client';
 import AdminDashboard from '../../AdminDash';
 
-const socket = io('http://localhost:5000'); 
+const socket = io('https://biryanishop.onrender.com'); 
 
 const menuItems = [
   { name: 'Ghost (1 kg)', price: 120 },
