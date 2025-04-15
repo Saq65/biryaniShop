@@ -10,6 +10,8 @@ const io = new Server(server, {
     },
 });
 
+const PORT = process.env.PORT || 5000;
+
 app.use(cors());
 app.use(express.json());
 
@@ -20,13 +22,11 @@ io.on('connection', (socket) => {
 app.post('/api/orders', (req, res) => {
     const order = req.body;
 
-    // save order to DB...
 
-    // notify admin
     io.emit('newOrder', order);
     res.status(201).send({ message: 'Order received' });
 });
 
-server.listen(5000, () => {
+server.listen(PORT, () => {
     console.log('Server running on http://localhost:5000');
 });

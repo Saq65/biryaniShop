@@ -52,7 +52,7 @@ const MeatHotelBilling = () => {
     setShowQR(true);
 
     try {
-      const orderResponse = await axios.post('http://localhost:5000/api/orders', {
+      const orderResponse = await axios.post('https://biryanishop.onrender.com/api/orders', {
         items: menuItems.map((item, index) => ({
           name: item.name,
           qty: quantities[index],
