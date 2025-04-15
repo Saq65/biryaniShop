@@ -6,7 +6,7 @@ const AdminDashboard = () => {
     const audioRef = useRef(new Audio('/preview.mp3'));
 
     useEffect(() => {
-        const socket = io('https://biryanishop.onrender.com'); 
+        const socket = io('http://localhost:5000'); 
 
         socket.on('newOrder', (order) => {
             setOrders((prev) => [order, ...prev]);
@@ -15,7 +15,7 @@ const AdminDashboard = () => {
 
             if (Notification.permission === 'granted') {
                 new Notification('New Order Received', {
-                    body: `Token #${order.token} - ₹${order.total}`,
+                    body: `Token #${order.token} - ₹${order.totalAmount}`,
                 });
             }
         });

@@ -6,7 +6,7 @@ import axios from 'axios';
 import io from 'socket.io-client';
 import AdminDashboard from '../../AdminDash';
 import Swal from "sweetalert2";
-const socket = io('https://biryanishop.onrender.com');
+const socket = io('https://localhost:5000');
 
 const menuItems = [
     { name: 'Ghost (1 kg)', price: 120 },
@@ -56,7 +56,7 @@ const MeatHotelBilling = () => {
         setShowQR(true);
 
         try {
-            const orderResponse = await axios.post('https://biryanishop.onrender.com/api/orders', {
+            const orderResponse = await axios.post('http://localhost:5000/api/orders', {
                 items: menuItems.map((item, index) => ({
                     name: item.name,
                     qty: quantities[index],
