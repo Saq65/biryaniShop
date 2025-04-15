@@ -27,6 +27,8 @@ app.post('/api/orders', (req, res) => {
     res.status(201).send({ message: 'Order received' });
 });
 
-server.listen(PORT, () => {
-    console.log('Server running on http://localhost:5000');
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(`✅ Server running on port ${PORT}`);
 });
+
+
